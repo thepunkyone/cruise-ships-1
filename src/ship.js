@@ -1,3 +1,6 @@
-function Ship(name) {
-    this.name = name;
-}
+function Ship(startingPort) {
+    this.startingPort = startingPort;
+};
+
+
+module.exports = Ship;
