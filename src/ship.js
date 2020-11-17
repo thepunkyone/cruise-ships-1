@@ -1,48 +1,34 @@
-const Port = require("./port");
+const Port = require("../src/Port");
+const Itinerary = require("./itinerary");
 
-function Ship(currentPort) { 
-    this.currentPort = currentPort;
-    this.passengers = 0;
-    this.name = name;
-    
-};
-    
-
-
-
-
+function Ship(itinerary) {
+  this.itinerary = itinerary;
+  this.currentPort = itinerary.ports[0];
+  this.previousPort = null;
+  this.passengers = 0;
+  this.name = name;
+}
 
 Ship.prototype.onBoard = function() {
-     this.passengers += 1;
-    
+  this.passengers += 1;
 };
 
 Ship.prototype.setSail = function() {
+  const itinerary = this.itinerary;
+  const currentPortIndex = itinerary.ports.indexOf(this.currentPort);
 
-    this.currentPort = 0;
-    
+  if (currentPortIndex === itinerary.ports.length - 1) {
+    throw new Error("End of itinerary reached");
+  }
+
+  this.previousPort = this.currentPort;
+  this.currentPort = null;
 };
 
 Ship.prototype.dock = function() {
-    
-    Ship.calais;
-
+  const itinerary = this.itinerary;
+  const previousPortIndex = itinerary.ports.indexOf(this.previousPort);
+  this.currentPort = itinerary.ports[previousPortIndex + 1];
 };
 
-Ship.prototype.dock = function(port) {
-    this.currentPort = port;
-}
-
-
-
-    
-
-
-
-   
-
-    
-
-
-module.exports = Ship,
-                Port;
+module.exports = Ship;
