@@ -1,12 +1,25 @@
-const Ship = require("../src/Ship");
-const Itinerary = require("./itinerary");
+class Port {
+    constructor(currentPort) {
+        this.currentPort = currentPort;
+        this.ships = [];
+    }
 
-function Port(currentPort) {
-  this.currentPort = currentPort;
+    setSail() {
+        this.currentPort = 0;
+    }
+
+    addShip(ship) {
+        this.ships.push(ship);
+    }
+
+    removeShip() {
+
+        this.ships.shift();
+    }
+
+
+
+
 }
-
-Port.prototype.setSail = function() {
-  this.currentPort = 0;
-};
 
 module.exports = Port;
