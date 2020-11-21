@@ -21,11 +21,13 @@ describe("Port", () => {
         let titanic;
         let jackSparrow;
 
+
         beforeAll(() => {
             port = new Port("Dover");
-            ship = {};
+            ship = jest.fn();
             titanic = {};
             jackSparrow = {};
+
         });
 
         it("can be instantiated", () => {

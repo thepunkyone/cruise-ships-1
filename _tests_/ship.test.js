@@ -10,11 +10,29 @@ describe("Ship", () => {
     let port;
 
     beforeEach(() => {
-        dover = new Port("Dover");
-        calais = new Port("Calais");
+
+
+
+
+        //
+        port = {
+            removeShip: jest.fn(),
+            addShip: jest.fn(),
+        };
+
+        dover = {
+            ...port,
+            name: "Dover",
+            ships: []
+        };
+
+        calais = {
+            ...port,
+            name: "Calais",
+            ships: []
+        };
         itinerary = new Itinerary([dover, calais]);
         ship = new Ship(itinerary);
-        port = new Port("Dover");
     });
     describe("with ports and an itinerary", () => {
         let ship;
@@ -62,11 +80,11 @@ describe("Ship", () => {
         expect(ship.passengers).toEqual(1);
     });
 
-    it("It can set sail", () => {
+    it(" can set sail", () => {
         ship.setSail();
 
         expect(ship.currentPort).toBeFalsy();
-        expect(dover.ships).not.toContain(ship);
+        expect(dover.removeShip()).toHaveBeenCalledWith(ship);
     });
 
     it("can dock at a different port", () => {
