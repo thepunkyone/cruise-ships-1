@@ -13,7 +13,6 @@ describe("Ship", () => {
         port = {
             removeShip: jest.fn(),
             addShip: jest.fn(),
-            dock: jest.fn()
         };
 
         dover = {
@@ -41,7 +40,6 @@ describe("Ship", () => {
             port = {
                 removeShip: jest.fn(),
                 addShip: jest.fn(),
-                dock: jest.fn()
             };
 
             dover = {
