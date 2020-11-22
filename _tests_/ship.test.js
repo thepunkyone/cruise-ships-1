@@ -80,15 +80,14 @@ describe("Ship", () => {
 
     it("can dock at a different port", () => {
 
-        const calais = new Port(jest.fn());
-        const dover = new Port(jest.fn());
 
         ship.setSail();
         ship.dock();
 
-        // expect(ship.currentPort).toBe(calais);
-        expect(ship.dock).toHaveBeenCalledWith(port);
-        expect(dover.dock).toHaveBeenCalledWith(port);
+        expect(ship.currentPort).toBe(calais);
+
+        expect(port.addShip).toHaveBeenCalledWith(ship);
+
     });
 
     it("can't sail further than its itinerary", () => {

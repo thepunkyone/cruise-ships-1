@@ -3,6 +3,8 @@ function Ship(itinerary) {
     this.currentPort = itinerary.ports[0];
     this.previousPort = null;
     this.currentPort.addShip(this);
+    this.currentPort.dock(this);
+
     this.name = name;
 
 
@@ -30,6 +32,7 @@ Ship.prototype.dock = function() {
 
     this.currentPort = itinerary.ports[previousPortIndex + 1];
     this.currentPort.addShip(this);
+    this.currentPort.dock(this);
 }
 
 
