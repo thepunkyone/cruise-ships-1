@@ -13,9 +13,6 @@ describe("Ship", () => {
             removeShip: jest.fn(),
             addShip: jest.fn(),
             dock: jest.fn()
-
-
-
         };
 
         dover = {
@@ -29,7 +26,11 @@ describe("Ship", () => {
             name: "Calais",
             ships: []
         };
-        itinerary = new Itinerary([dover, calais]);
+
+        itinerary = {
+            ports: [dover, calais]
+        };
+
         ship = new Ship(itinerary);
     });
     describe("with ports and an itinerary", () => {
@@ -44,7 +45,6 @@ describe("Ship", () => {
                 removeShip: jest.fn(),
                 addShip: jest.fn(),
                 dock: jest.fn()
-
             };
 
             dover = {
@@ -58,7 +58,11 @@ describe("Ship", () => {
                 name: "Calais",
                 ships: []
             };
-            itinerary = new Itinerary([dover, calais]);
+
+            itinerary = {
+                ports: [dover, calais]
+            };
+
             ship = new Ship(itinerary);
         });
 
@@ -82,15 +86,12 @@ describe("Ship", () => {
     });
 
     it("can dock at a different port", () => {
-
-
         ship.setSail();
         ship.dock();
 
         expect(ship.currentPort).toBe(calais);
 
-        expect(port.addShip).toHaveBeenCalledWith(ship);
-
+        expect(dover.addShip).toHaveBeenCalledWith(ship);
     });
 
     it("can't sail further than its itinerary", () => {
