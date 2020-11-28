@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1606391968053" clover="3.2.0">
+  <project timestamp="1606391968053" name="All files">
+    <metrics statements="32" coveredstatements="31" conditionals="2" coveredconditionals="2" methods="8" coveredmethods="7" elements="42" coveredelements="40" complexity="0" loc="32" ncloc="32" packages="1" files="3" classes="3"/>
+    <file name="Port.js" path="/Users/dariomilani/Desktop/Projects/cruise-ships/src/Port.js">
+      <metrics statements="9" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+      <line num="2" count="14" type="stmt"/>
+      <line num="3" count="14" type="stmt"/>
+      <line num="6" count="2" type="stmt"/>
+      <line num="7" count="0" type="stmt"/>
+      <line num="10" count="2" type="stmt"/>
+      <line num="11" count="3" type="stmt"/>
+      <line num="14" count="2" type="stmt"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="24" count="2" type="stmt"/>
+    </file>
+    <file name="Ship.js" path="/Users/dariomilani/Desktop/Projects/cruise-ships/src/Ship.js">
+      <metrics statements="21" coveredstatements="21" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <line num="2" count="9" type="stmt"/>
+      <line num="3" count="9" type="stmt"/>
+      <line num="4" count="9" type="stmt"/>
+      <line num="5" count="9" type="stmt"/>
+      <line num="6" count="9" type="stmt"/>
+      <line num="8" count="9" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="12" count="4" type="stmt"/>
+      <line num="13" count="4" type="stmt"/>
+      <line num="15" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="19" count="3" type="stmt"/>
+      <line num="20" count="3" type="stmt"/>
+      <line num="21" count="3" type="stmt"/>
+      <line num="24" count="1" type="stmt"/>
+      <line num="25" count="2" type="stmt"/>
+      <line num="26" count="2" type="stmt"/>
+      <line num="28" count="2" type="stmt"/>
+      <line num="29" count="2" type="stmt"/>
+      <line num="30" count="2" type="stmt"/>
+      <line num="33" count="1" type="stmt"/>
+    </file>
+    <file name="itinerary.js" path="/Users/dariomilani/Desktop/Projects/cruise-ships/src/itinerary.js">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="2" count="2" type="stmt"/>
+      <line num="6" count="2" type="stmt"/>
+    </file>
+  </project>
+</coverage>
