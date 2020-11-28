@@ -13,8 +13,8 @@ const backgrounds = [
 
 let backgroundIndex = 0;
 window.setInterval(() => {
-document.querySelector('#viewport').style.backgroundImage = `url('${backgrounds[backgorundIndex % backgrounds.length]}')`;
-backgorundIndex += 1;
+document.querySelector('#viewport').style.backgroundImage = `url('${backgrounds[backgroundIndex % backgrounds.length]}')`;
+backgroundIndex += 1;
 
 }, 1000);
 
