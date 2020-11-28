@@ -12,7 +12,7 @@ addShip (ship) {
     this.ships.push(ship);
     },
 removeShip () {
-    this.ships.shift();
+    this.ships = this.ships.filter(dockedShip => dockedShip !== ship);
         },
 };
 
