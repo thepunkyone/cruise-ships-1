@@ -1,22 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Cruise Ships</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<body>
+  <body>
     <div id="viewport">
+      <div id="ports">
+          <div class="port" data-port-name="New York City" data-port-index="0"></div>
+          <div class="port" data-port-name="Los Angeles" data-port-index="0"></div>
+          <div class="port" data-port-name="Chicago" data-port-index="0"></div>
+          <div class="port" data-port-name="Miami" data-port-index="0"></div>
 
+
+
+
+      </div>
     </div>
-    <script src="src/controller.js"></script>
+
+    <script src="src/Controller.js"></script>
+    <scritp src="src/Port.js"></scritp>
+    <scrtipt src="src/Itinerary.js"></scrtipt>
     <script>
-        const controller = new Controller();
+      const controller = new Controller();
+
+      const itinerary = new itinerary([
+        new Port("New York City"),
+        new Port("Los Angeles"),
+        new Port("Chicago"),
+        new Port("Miami")
+
+      ]);
+
+      controller.renderPorts(itinerary.Ports);
     </script>
-</body>
+  </body>
 </html>

@@ -12,8 +12,8 @@ addShip (ship) {
     this.ships.push(ship);
     },
 removeShip () {
-    this.ships = this.ships.filter(dockedShip => dockedShip !== ship);
-        },
+    this.ships.shift();
+        }
 };
 
 if(typeof module !== 'undefined' && module.exports) {

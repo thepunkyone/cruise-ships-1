@@ -51,7 +51,7 @@ describe("Port", () => {
     it("can remove a ship", () => {
         port.addShip(titanic);
         port.addShip(jackSparrow);
-        port.removeShip(mockShip);
+        port.removeShip(ship);
 
         expect(port.ships).toEqual([titanic]);
     });

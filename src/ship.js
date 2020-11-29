@@ -22,11 +22,7 @@ Ship.prototype = {
     this.currentPort = null;
     this.previousPort.removeShip(this);
 },
-};
-
-
-Ship.prototype = {
-    dock () {
+dock () {
     const itinerary = this.itinerary;
     const previousPortIndex = itinerary.ports.indexOf(this.previousPort);
 
@@ -36,9 +32,7 @@ Ship.prototype = {
     },
 };
 
-
-
-if (typeof module !== 'undefined' && module.exports) {
+    if (typeof module !== 'undefined' && module.exports) {
     module.exports = Ship;
   } else {
     window.Ship = Ship;
