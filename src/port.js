@@ -1,18 +1,16 @@
 (function exportPort() {
-function Port(currentPort) {
-    this.currentPort = currentPort;
+function Port(name) {
+    this.name = name;
     this.ships = [];
-}
-
+    
+};
 Port.prototype = {
-    setSail () {
-    this.currentPort = 0;
-},
-addShip (ship) {
+    addShip (ship) {
     this.ships.push(ship);
     },
-removeShip () {
-    this.ships.shift();
+    removeShip () {
+    this.ships.pop();
+    
         }
 };
 

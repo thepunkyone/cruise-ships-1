@@ -2,35 +2,15 @@ const Port = require("../src/Port.js");
 
 describe("Port", () => {
     let port;
-    let ship;
-    let titanic;
-    let jackSparrow;
-    let mockShip;
-
+    let ship = jest.fn();
     beforeEach(() => {
         port = new Port("Dover");
-        ship = jest.fn();
-        titanic = {};
-        jackSparrow = {};
-        mockShip = jest.fn();
+        port = new Port("Calais");
+        
     });
 
-    describe("ports with ships", () => {
-        let port;
-        let ship;
-        let titanic;
-        let jackSparrow;
 
-
-        beforeAll(() => {
-            port = new Port("Dover");
-            ship = jest.fn();
-            titanic = {};
-            jackSparrow = {};
-
-        });
-
-        it("can be instantiated", () => {
+        it("Returns the object", () => {
             expect(port).toBeInstanceOf(Object);
         });
 
@@ -46,12 +26,15 @@ describe("Port", () => {
 
             expect(port.ships).toContain(ship);
         });
-    });
+    
 
     it("can remove a ship", () => {
+        const titanic = jest.fn();
+        const jackSparrow = jest.fn();
+
         port.addShip(titanic);
         port.addShip(jackSparrow);
-        port.removeShip(ship);
+        port.removeShip(jackSparrow);
 
         expect(port.ships).toEqual([titanic]);
     });

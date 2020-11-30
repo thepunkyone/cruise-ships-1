@@ -12,10 +12,9 @@
   <body>
     <div id="viewport">
       <div id="ports">
-          <div class="port" data-port-name="New York City" data-port-index="0"></div>
-          <div class="port" data-port-name="Los Angeles" data-port-index="0"></div>
-          <div class="port" data-port-name="Chicago" data-port-index="0"></div>
-          <div class="port" data-port-name="Miami" data-port-index="0"></div>
+        
+          
+         
 
 
 
@@ -28,14 +27,12 @@
     <scrtipt src="src/Itinerary.js"></scrtipt>
     <script>
       const controller = new Controller();
-
-      const itinerary = new itinerary([
+        const itinerary = new itinerary([
         new Port("New York City"),
         new Port("Los Angeles"),
         new Port("Chicago"),
         new Port("Miami")
-
-      ]);
+    ])
 
       controller.renderPorts(itinerary.Ports);
     </script>

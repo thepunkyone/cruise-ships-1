@@ -4,21 +4,10 @@
   "description": "creating a ship with OOP",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose --bail"
+    "test": "jest"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com:runner855/cruise-ships.git"
-  },
-  "keywords": [
-    "javascript"
-  ],
   "author": "runner855",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/runner855/cruise-ships.git/issues"
-  },
-  "homepage": "https://github.com/runner855/cruise-ships.git",
   "devDependencies": {
     "eslint": "^6.5.1",
     "eslint-config-airbnb-base": "^14.0.0",
@@ -28,5 +17,8 @@
     "eslint-plugin-react": "^7.21.5",
     "jest": "^24.9.0",
     "prettier": "1.18.2"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
   }
 }
