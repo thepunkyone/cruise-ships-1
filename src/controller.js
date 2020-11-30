@@ -3,6 +3,10 @@ function Controller(ship) {
   this.ship = ship;
   this.initialiseSea();
 
+  document.querySelector("#sailbutton").addEventListener("click", () => {
+    this.setSail();
+  });
+
 }
   Controller.prototype = {
     initialiseSea() {
@@ -14,7 +18,7 @@ function Controller(ship) {
           backgrounds[backgroundIndex % backgrounds.length]
         }')`;
         backgroundIndex += 1;
-      }, 1000);
+      }, 500);
     },
 
     renderPorts(ports) {
@@ -31,8 +35,58 @@ function Controller(ship) {
         const portsElementWidth = parseInt(portsElement.style.width, 10);
         portsElement.style.width = `${portsElementWidth + 256}px`;
       });
+  },
+
+  renderShip() {
+    const ship = this.ship;
+  const shipPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
+  const portElement = document.querySelector(`[data-port-index='${shipPortIndex}']`);
+
+  const shipElement = document.querySelector("#ship");
+  shipElement.style.top = `${portElement.offsetTop + 32}px`;
+  shipElement.style.left = `${portElement.offsetLeft - 32}px`;
+
+  },
+
+  setSail() {
+    const ship = this.ship;
+
+    const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
+    const nextPortIndex = currentPortIndex + 1;
+    const nextPortElement = document.querySelector(`[data-port-index='${nextPortIndex}']`);
+
+    if (!nextPortElement) {
+      return alert("End of the line!");
     }
+
+    const shipElement = document.querySelector("#ship");
+    const sailInterval = setInterval(() => {
+      const shipLeft = parseInt(shipElement.style.left, 10);
+      if (shipLeft === (nextPortElement.offsetLeft -32)) {
+        ship.setSail();
+        ship.dock();
+        clearInterval(sailInterval);
+      }
+
+      shipElement.style.left = `${shipLeft + 1}px`;
+    }, 20);
+
+    
+  },
+
+  renderMessage(message) {
+    let messAge = document.getElementById("#message").innerHTML;
+    Element.appendChild("#message");
+
   }
+};
+
+      
+
+
+    
+
+  
 
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = Controller;
