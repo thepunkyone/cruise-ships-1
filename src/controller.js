@@ -1,8 +1,9 @@
 (function exportController() {
-  function Controller() {
-    this.initialiseSea();
-  }
+function Controller(ship) {
+  this.ship = ship;
+  this.initialiseSea();
 
+}
   Controller.prototype = {
     initialiseSea() {
       const backgrounds = ['./images/water0.png', './images/water1.png'];
@@ -31,7 +32,7 @@
         portsElement.style.width = `${portsElementWidth + 256}px`;
       });
     }
-  };
+  }
 
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = Controller;
