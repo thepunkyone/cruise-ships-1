@@ -16,7 +16,6 @@
       <div id="ports"></div>
       <div id="ship"></div>
       <button id="sailbutton">Set Sail!</button>
-      <div id="message"></div>
     </div>
 
     <script src="src/Controller.js"></script>
@@ -36,7 +35,8 @@
       const controller = new Controller(ship);
 
       controller.renderPorts(itinerary.ports);
-      controller.renderShip();
+      controller.renderShip(ship);
+      controller.renderMessage();
     </script>
   </body>
 </html>
