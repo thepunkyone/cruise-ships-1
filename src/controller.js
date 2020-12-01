@@ -55,7 +55,8 @@ function Controller(ship) {
     const nextPortElement = document.querySelector(`[data-port-index='${nextPortIndex}']`);
 
     if (!nextPortElement) {
-      return alert("End of the line!");
+      return this.renderMessage(`Last Stop ${ship.currentPort.name}`);
+      // alert("End of the line!");
     }
     this.renderMessage(`Now departing ${ship.currentPort.name}`);
     const shipElement = document.querySelector('#ship');
